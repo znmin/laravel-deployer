@@ -1,5 +1,5 @@
 {
-    "name": "jimmy/laravel-deployer",
+    "name": "znmin/laravel-deployer",
     "license": "MIT",
     "require": {
         "php": ">=7.1",
@@ -10,12 +10,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Jimmy\\LaravelDeployer\\": "src/"
+            "Znmin\\LaravelDeployer\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Jimmy\\LaravelDeployer\\Tests\\": "tests/"
+            "Znmin\\LaravelDeployer\\Tests\\": "tests/"
         }
     }
 }

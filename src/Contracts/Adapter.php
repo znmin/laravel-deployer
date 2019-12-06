@@ -9,7 +9,7 @@
  * with this source code in the file LICENSE.
  */
 
-namespace Jimmy\LaravelDeployer\Contracts;
+namespace Znmin\LaravelDeployer\Contracts;
 
 interface Adapter
 {

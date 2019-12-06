@@ -9,10 +9,10 @@
  * with this source code in the file LICENSE.
  */
 
-namespace Jimmy\LaravelDeployer\Adapters;
+namespace Znmin\LaravelDeployer\Adapters;
 
-use Jimmy\LaravelDeployer\Contracts\Adapter as AdapterContract;
-use Jimmy\LaravelDeployer\Exceptions\DeployException;
+use Znmin\LaravelDeployer\Contracts\Adapter as AdapterContract;
+use Znmin\LaravelDeployer\Exceptions\DeployException;
 
 abstract class Adapter implements AdapterContract
 {

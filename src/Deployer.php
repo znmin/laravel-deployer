@@ -9,9 +9,9 @@
  * with this source code in the file LICENSE.
  */
 
-namespace Jimmy\LaravelDeployer;
+namespace Znmin\LaravelDeployer;
 
-use Jimmy\LaravelDeployer\Contracts\Adapter;
+use Znmin\LaravelDeployer\Contracts\Adapter;
 
 class Deployer
 {

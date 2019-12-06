@@ -9,7 +9,7 @@
  * with this source code in the file LICENSE.
  */
 
-namespace Jimmy\LaravelDeployer\Exceptions;
+namespace Znmin\LaravelDeployer\Exceptions;
 
 class DeployException extends \Exception
 {

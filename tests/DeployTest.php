@@ -9,10 +9,10 @@
  * with this source code in the file LICENSE.
  */
 
-namespace Jimmy\LaravelDeployer\Tests;
+namespace Znmin\LaravelDeployer\Tests;
 
-use Jimmy\LaravelDeployer\Adapters\ExpectAdapter;
-use Jimmy\LaravelDeployer\Deployer;
+use Znmin\LaravelDeployer\Adapters\ExpectAdapter;
+use Znmin\LaravelDeployer\Deployer;
 use PHPUnit\Framework\TestCase;
 
 class DeployTest extends TestCase

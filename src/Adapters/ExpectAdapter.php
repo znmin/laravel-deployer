@@ -9,9 +9,9 @@
  * with this source code in the file LICENSE.
  */
 
-namespace Jimmy\LaravelDeployer\Adapters;
+namespace Znmin\LaravelDeployer\Adapters;
 
-use Jimmy\LaravelDeployer\Exceptions\ExpectDeployException;
+use Znmin\LaravelDeployer\Exceptions\ExpectDeployException;
 use Symfony\Component\Process\Exception\ProcessFailedException;
 use Symfony\Component\Process\Process;
 
@@ -24,7 +24,7 @@ class ExpectAdapter extends Adapter
 
     /**
      * @throws ExpectDeployException
-     * @throws \Jimmy\LaravelDeployer\Exceptions\DeployException
+     * @throws \Znmin\LaravelDeployer\Exceptions\DeployException
      */
     public function deploy()
     {
