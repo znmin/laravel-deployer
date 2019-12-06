@@ -14,7 +14,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Jimmy\\LaravelDeployer\\Tests": "tests/"
+            "Jimmy\\LaravelDeployer\\Tests\\": "tests/"
         }
     }
 }
