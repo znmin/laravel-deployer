@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the jimmy/laravel-deployer.
+ * This file is part of the znmin/laravel-deployer.
  *
  * (c) jimmy.xie <jimmy.xie@znmin.com>
  *
@@ -30,7 +30,7 @@ abstract class Adapter implements AdapterContract
      */
     protected function getDeployPath()
     {
-        if (!empty($this->config['deploy_path'])) {
+        if (! empty($this->config['deploy_path'])) {
             return $this->config['deploy_path'];
         }
 
@@ -40,7 +40,7 @@ abstract class Adapter implements AdapterContract
             if ('/' == $deploy_path) {
                 throw new DeployException('deploy path not defined.');
             }
-        } while (!file_exists($deploy_path.'/.git'));
+        } while (! file_exists($deploy_path.'/.git'));
 
         return $deploy_path;
     }
