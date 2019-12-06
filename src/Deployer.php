@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is part of the jimmy/laravel-deployer.
+ *
+ * (c) jimmy.xie <jimmy.xie@znmin.com>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 namespace Jimmy\LaravelDeployer;
 
 use Jimmy\LaravelDeployer\Contracts\Adapter;
@@ -7,7 +16,7 @@ use Jimmy\LaravelDeployer\Contracts\Adapter;
 class Deployer
 {
     /**
-     * 部署适配器
+     * 部署适配器.
      *
      * @var Adapter
      */
@@ -19,7 +28,7 @@ class Deployer
     }
 
     /**
-     * 开始部署
+     * 开始部署.
      */
     public function run()
     {
