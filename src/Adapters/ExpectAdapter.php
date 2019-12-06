@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is part of the jimmy/laravel-deployer.
+ *
+ * (c) jimmy.xie <jimmy.xie@znmin.com>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 namespace Jimmy\LaravelDeployer\Adapters;
 
 use Jimmy\LaravelDeployer\Exceptions\ExpectDeployException;
@@ -54,11 +63,10 @@ EOF;
         $process = Process::fromShellCommandline($deploy_shell);
         $process->run();
 
-        if (! $process->isSuccessful()) {
-
+        if (!$process->isSuccessful()) {
             $exit_code = $process->getExitCode();
 
-            if (! empty($this->exit_code_map[$exit_code])) {
+            if (!empty($this->exit_code_map[$exit_code])) {
                 throw new ExpectDeployException($this->exit_code_map[$exit_code]);
             }
 
@@ -68,6 +76,7 @@ EOF;
 
     /**
      * @return mixed
+     *
      * @throws ExpectDeployException
      */
     protected function getUsername()
@@ -77,6 +86,7 @@ EOF;
 
     /**
      * @return mixed
+     *
      * @throws ExpectDeployException
      */
     protected function getPassword()
@@ -86,6 +96,7 @@ EOF;
 
     /**
      * @return mixed
+     *
      * @throws ExpectDeployException
      */
     protected function getBranch()
@@ -99,6 +110,7 @@ EOF;
 
     /**
      * @return mixed
+     *
      * @throws ExpectDeployException
      */
     protected function getRemote()
