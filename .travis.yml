@@ -7,7 +7,7 @@ php:
   - 7.3
 
 dist: trusty
-sudo: true
+sudo: required
 
 install:
   - sudo apt-get install expect
