@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the jimmy/laravel-deployer.
+ * This file is part of the znmin/laravel-deployer.
  *
  * (c) jimmy.xie <jimmy.xie@znmin.com>
  *
@@ -11,9 +11,9 @@
 
 namespace Znmin\LaravelDeployer\Tests;
 
+use PHPUnit\Framework\TestCase;
 use Znmin\LaravelDeployer\Adapters\ExpectAdapter;
 use Znmin\LaravelDeployer\Deployer;
-use PHPUnit\Framework\TestCase;
 
 class DeployTest extends TestCase
 {

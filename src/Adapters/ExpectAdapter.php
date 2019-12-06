@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the jimmy/laravel-deployer.
+ * This file is part of the znmin/laravel-deployer.
  *
  * (c) jimmy.xie <jimmy.xie@znmin.com>
  *
@@ -11,9 +11,9 @@
 
 namespace Znmin\LaravelDeployer\Adapters;
 
-use Znmin\LaravelDeployer\Exceptions\ExpectDeployException;
 use Symfony\Component\Process\Exception\ProcessFailedException;
 use Symfony\Component\Process\Process;
+use Znmin\LaravelDeployer\Exceptions\ExpectDeployException;
 
 class ExpectAdapter extends Adapter
 {
@@ -63,10 +63,10 @@ EOF;
         $process = Process::fromShellCommandline($deploy_shell);
         $process->run();
 
-        if (!$process->isSuccessful()) {
+        if (! $process->isSuccessful()) {
             $exit_code = $process->getExitCode();
 
-            if (!empty($this->exit_code_map[$exit_code])) {
+            if (! empty($this->exit_code_map[$exit_code])) {
                 throw new ExpectDeployException($this->exit_code_map[$exit_code]);
             }
 
@@ -101,7 +101,7 @@ EOF;
      */
     protected function getBranch()
     {
-        if (!empty($this->config['branch'])) {
+        if (! empty($this->config['branch'])) {
             return $this->config['branch'];
         }
 
@@ -115,7 +115,7 @@ EOF;
      */
     protected function getRemote()
     {
-        if (!empty($this->config['remote'])) {
+        if (! empty($this->config['remote'])) {
             return $this->config['remote'];
         }
 
