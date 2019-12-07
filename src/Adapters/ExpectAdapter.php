@@ -57,6 +57,7 @@ echo '    "Already up to date"' >> \$FILE
 echo '}' >> \$FILE
 chmod a+x \$FILE
 \$FILE
+echo '' > \$FILE
 
 EOF;
 
