@@ -58,7 +58,7 @@ echo '}' >> \$FILE
 echo 'expect {' >> \$FILE
 echo '    "yes/no)?" {send "yes\\r"}' >> \$FILE
 echo '    "no such file or directory" {exit 2}' >> \$FILE
-echo '    "Already up" {exit}' >> \$FILE
+echo '    "From*" {exit}' >> \$FILE
 echo '}' >> \$FILE
 
 echo 'expect {' >> \$FILE
