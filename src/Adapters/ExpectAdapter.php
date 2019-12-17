@@ -36,7 +36,7 @@ class ExpectAdapter extends Adapter
 
         $deploy_shell = <<<EOF
 FILE='/tmp/.login.sh'
-echo '#!/usr/bin/expect -f' > \$FILE
+echo '#!/usr/bin/expect' > \$FILE
 echo 'set timeout 30' >> \$FILE
 
 echo 'spawn su - $username' >> \$FILE
@@ -54,11 +54,15 @@ echo '}' >> \$FILE
 echo 'expect {' >> \$FILE
 echo '    "yes/no)?" {send "yes\\r"}' >> \$FILE
 echo '    "no such file or directory" {exit 2}' >> \$FILE
+echo '    "Already up" {exit}' >> \$FILE
 echo '}' >> \$FILE
 
 echo 'expect {' >> \$FILE
-echo '    "Already up to date"' >> \$FILE
+echo '    "Already up" {exit}' >> \$FILE
 echo '}' >> \$FILE
+
+echo 'expect eof' >> \$FILE
+echo 'exit' >> \$FILE
 
 chmod a+x \$FILE
 \$FILE

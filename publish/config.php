@@ -28,8 +28,8 @@ return [
          * expect 驱动配置
          */
         'expect' => [
-            'username' => env('DEPLOY_EXPECT_USERNAME', 'vagrant'),
-            'password' => env('DEPLOY_EXPECT_PASSWORD', 'vagrant'),
+            'username' => env('DEPLOY_EXPECT_USERNAME', ''),
+            'password' => env('DEPLOY_EXPECT_PASSWORD', ''),
             'branch' => 'master',
             'remote' => 'origin',
         ],
