@@ -13,6 +13,7 @@ namespace Znmin\LaravelDeployer\Adapters;
 
 use Symfony\Component\Process\Exception\ProcessFailedException;
 use Symfony\Component\Process\Process;
+use Znmin\LaravelDeployer\Exceptions\DeployException;
 use Znmin\LaravelDeployer\Exceptions\ExpectDeployException;
 
 class ExpectAdapter extends Adapter
@@ -28,6 +29,10 @@ class ExpectAdapter extends Adapter
      */
     public function deploy()
     {
+        if (! $this->expectIsInstalled()) {
+            throw new DeployException('not find expect');
+        }
+
         $username = $this->getUsername();
         $password = $this->getPassword();
         $deploy_path = $this->getDeployPath();
@@ -130,5 +135,13 @@ EOF;
         }
 
         throw new ExpectDeployException('expect deploy remote not defined.');
+    }
+
+    /**
+     * 判断 expect 是否安装
+     */
+    protected function expectIsInstalled()
+    {
+        return file_exists('/usr/bin/expect');
     }
 }
