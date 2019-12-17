@@ -10,13 +10,28 @@
  */
 
 return [
+
+    /*
+    |--------------------------------------------------------------------------
+    | 默认部署驱动
+    |--------------------------------------------------------------------------
+    |
+    | 指定默认的部署驱动
+    | 可选择的驱动：expect
+    |
+    */
     'default' => 'expect',
 
     'drives' => [
-        // linux expect 驱动
+
+        /*
+         * expect 驱动配置
+         */
         'expect' => [
-            'user' => 'vagrant',
-            'password' => 'vagrant',
+            'username' => env('DEPLOY_EXPECT_USERNAME', 'vagrant'),
+            'password' => env('DEPLOY_EXPECT_PASSWORD', 'vagrant'),
+            'branch' => 'master',
+            'remote' => 'origin',
         ],
     ],
 ];
