@@ -138,7 +138,7 @@ EOF;
     }
 
     /**
-     * 判断 expect 是否安装
+     * 判断 expect 是否安装.
      */
     protected function expectIsInstalled()
     {
