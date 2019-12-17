@@ -13,7 +13,6 @@ namespace Znmin\LaravelDeployer\Adapters;
 
 use Symfony\Component\Process\Exception\ProcessFailedException;
 use Symfony\Component\Process\Process;
-use Znmin\LaravelDeployer\Exceptions\DeployException;
 use Znmin\LaravelDeployer\Exceptions\ExpectDeployException;
 
 class ExpectAdapter extends Adapter
@@ -138,7 +137,7 @@ EOF;
     }
 
     /**
-     * 判断 expect 是否安装
+     * 判断 expect 是否安装.
      */
     protected function expectIsInstalled()
     {
