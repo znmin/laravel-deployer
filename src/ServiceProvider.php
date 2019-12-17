@@ -1,13 +1,22 @@
 <?php
 
+/*
+ * This file is part of the znmin/laravel-deployer.
+ *
+ * (c) jimmy.xie <jimmy.xie@znmin.com>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 namespace Znmin\LaravelDeployer;
 
 use Illuminate\Contracts\Config\Repository;
 use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Routing\Router;
 use Illuminate\Support\ServiceProvider as LaravelServiceProvider;
 use Illuminate\Support\Str;
 use Znmin\LaravelDeployer\Exceptions\DeployException;
-use Illuminate\Routing\Router;
 
 class ServiceProvider extends LaravelServiceProvider
 {
@@ -32,13 +41,13 @@ class ServiceProvider extends LaravelServiceProvider
 
             $default_adapter = Str::contains($default_adapter_name, '\\')
                 ? $default_adapter_name
-                : 'Znmin\\LaravelDeployer\\Adapters\\' . Str::studly($default_adapter_name) . 'Adapter';
+                : 'Znmin\\LaravelDeployer\\Adapters\\'.Str::studly($default_adapter_name).'Adapter';
 
             if (! class_exists($default_adapter)) {
                 throw new DeployException('指定驱动不存在');
             }
 
-            return new Deployer(new $default_adapter($config->get('deploy.drives.' . $default_adapter_name)));
+            return new Deployer(new $default_adapter($config->get('deploy.drives.'.$default_adapter_name)));
         });
 
         /** @var Router $router */
