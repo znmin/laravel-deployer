@@ -30,7 +30,7 @@ class ExpectAdapter extends Adapter
     public function deploy()
     {
         if (! $this->expectIsInstalled()) {
-            throw new DeployException('not find expect');
+            throw new ExpectDeployException('not find expect');
         }
 
         $username = $this->getUsername();
