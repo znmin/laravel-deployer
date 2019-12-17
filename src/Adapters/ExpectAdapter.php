@@ -52,9 +52,14 @@ echo '    "$username" {send "cd $deploy_path && git pull $remote $branch\\r"}' >
 echo '}' >> \$FILE
 
 echo 'expect {' >> \$FILE
+echo '    "yes/no)?" {send "yes\\r"}' >> \$FILE
 echo '    "no such file or directory" {exit 2}' >> \$FILE
+echo '}' >> \$FILE
+
+echo 'expect {' >> \$FILE
 echo '    "Already up to date"' >> \$FILE
 echo '}' >> \$FILE
+
 chmod a+x \$FILE
 \$FILE
 echo '' > \$FILE
