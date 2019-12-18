@@ -30,7 +30,7 @@ return [
         'expect' => [
             'username' => env('DEPLOY_EXPECT_USERNAME', ''),
             'password' => env('DEPLOY_EXPECT_PASSWORD', ''),
-            'branch' => 'master',
+            'branch' => env('DEPLOY_EXPECT_BRANCH', 'master'),
             'remote' => 'origin',
         ],
     ],
