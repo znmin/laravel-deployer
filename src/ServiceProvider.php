@@ -16,7 +16,8 @@ use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Routing\Router;
 use Illuminate\Support\ServiceProvider as LaravelServiceProvider;
 use Illuminate\Support\Str;
-use Znmin\LaravelDeployer\Exceptions\DeployException;
+use Znmin\Deployer\Deployer;
+use Znmin\Deployer\Exceptions\DeployException;
 
 class ServiceProvider extends LaravelServiceProvider
 {
@@ -41,7 +42,7 @@ class ServiceProvider extends LaravelServiceProvider
 
             $default_adapter = Str::contains($default_adapter_name, '\\')
                 ? $default_adapter_name
-                : 'Znmin\\LaravelDeployer\\Adapters\\'.Str::studly($default_adapter_name).'Adapter';
+                : 'Znmin\\Deployer\\Adapters\\'.Str::studly($default_adapter_name).'Adapter';
 
             if (! class_exists($default_adapter)) {
                 throw new DeployException('指定驱动不存在');

@@ -12,7 +12,7 @@
 namespace Znmin\LaravelDeployer\Controllers;
 
 use Illuminate\Routing\Controller;
-use Znmin\LaravelDeployer\Deployer;
+use Znmin\Deployer\Deployer;
 
 class GitHookController extends Controller
 {
